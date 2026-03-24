@@ -5,8 +5,10 @@ import groups #Для хранения id групп
 
 def get_html(group): # по идее сюда передаем str группу, дальше в функции находим её айди и поджставляем
 
-    # TODO функция для определения айди группы по её названию
-
+    group_id = groups.find_group(group)
+    if group_id is None:
+        print("Группа не найдена")
+        return None
 
     session = requests.Session()
 
@@ -21,7 +23,7 @@ def get_html(group): # по идее сюда передаем str группу,
         }
     )
     
-    url = "https://sibsutis.ru/students/schedule/?type=student&group=" + groups.group_id
+    url = "https://sibsutis.ru/students/schedule/?type=student&group=" + str(group_id)
     response = session.get(url)
 
     html = response.text
@@ -60,4 +62,4 @@ def extract_days(html):
 
     return results
 
-print(get_html("f")[12])
+print(get_html("ИВ-422")[12])

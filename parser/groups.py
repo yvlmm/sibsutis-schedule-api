@@ -1,2 +1,14 @@
-group_id = "486"
-#в будущем тут будет словарь групп и айдишников
+groups_id = {
+    "ИВ-421": "483",
+    "ИВ-422": "486",
+    "ИКС-431" : "235",
+    "ИКС-432" : "236",
+    "ИКС-433" : "237"
+}
+
+def find_group(group):
+    group_id = groups_id.get(group)
+    if group_id:
+        return group_id
+    else:
+        return None 
