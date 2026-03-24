@@ -12,3 +12,9 @@ def find_group(group):
         return group_id
     else:
         return None 
+
+def find_group_name(group_id):
+    for group, id in groups_id.items():
+        if id == group_id:
+            return group
+    return None

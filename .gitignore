@@ -1,4 +1,6 @@
 private.py
+parser/private.py
 __pycache__
 *.json
 .vscode
+.env

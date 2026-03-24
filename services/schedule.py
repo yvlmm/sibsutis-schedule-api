@@ -11,7 +11,11 @@ class Lesson:
     lesson_type: str # лекции, практики, лабы
     teacher: str
     classroom: str # аудитория
-    groups: List[str] # группы (удалить?????)
+    group_id: str # айди группы
+    group_name: str # название группы
+    day_number: int # номер дня (1-14)
+    day_name: str # название дня (Понедельник, Вторник...)
+
 
 @dataclass
 class Day:
@@ -20,6 +24,7 @@ class Day:
     lessons: List[Lesson] = field(default_factory=list)
 
 @dataclass
-class Week:
+class DoubleWeek:
     """Класс учебной недели"""
     days: List[Day] = field(default_factory=list)
+
